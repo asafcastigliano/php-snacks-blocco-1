@@ -12,7 +12,29 @@
 
 <body>
 
+    <?php
 
+        if (isset($_GET["name"]) && isset($_GET["mail"]) && isset($_GET["age"])) {
+
+            $name = $_GET["name"];
+            $mail = $_GET["mail"];
+            $age = $_GET["age"];
+
+            $nameLengthValid = strlen($name) > 3;
+            $mailFormatValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
+            $ageIsNumeric = is_numeric($age);
+
+            echo ($nameLengthValid && $mailFormatValid && $ageIsNumeric) ? "Accesso riuscito" : "Accesso negato";
+        }
+
+    ?>
+
+    <form method="get" action="./index.php">
+        Name: <input type="text" name="name"><br>
+        Mail: <input type="email" name="mail"><br>
+        Age: <input type="number" name="age"><br>
+        <input type="submit" value="Verifica Accesso">
+    </form>
 
 </body>
 
