@@ -1,3 +1,29 @@
+<?php
+
+    $partite = [
+        [
+            "squadra_casa" => "Olimpia Milano",
+            "squadra_ospite" => "Cantù",
+            "punti_casa" => 55,
+            "punti_ospite" => 60
+        ],
+        [
+            "squadra_casa" => "Parma",
+            "squadra_ospite" => "Torino",
+            "punti_casa" => 70,
+            "punti_ospite" => 65
+        ],
+        [
+            "squadra_casa" => "Lucera",
+            "squadra_ospite" => "Bologna",
+            "punti_casa" => 62,
+            "punti_ospite" => 58
+        ],
+    ];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +38,13 @@
 
 <body>
 
+    <?php
 
+        foreach ($partite as $partita) {
+            echo $partita["squadra_casa"] . " - " . $partita["squadra_ospite"] . " | " . $partita["punti_casa"] . "-" . $partita["punti_ospite"] . "<br>";
+        }
+
+    ?>
 
 </body>
 
