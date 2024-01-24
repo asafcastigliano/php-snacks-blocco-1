@@ -1,3 +1,46 @@
+<?php
+
+    $posts = [
+        '01-01-2022' => [
+            [
+                'title' => 'Lorem Ipsum',
+                'author' => 'John Doe',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+            ],
+            [
+                'title' => 'PHP Basics',
+                'author' => 'Jane Smith',
+                'text' => 'A beginner\'s guide to PHP programming.'
+            ],
+        ],
+        '15-02-2022' => [
+            [
+                'title' => 'Web Development Trends',
+                'author' => 'Alice Johnson',
+                'text' => 'Exploring the latest trends in web development.'
+            ]
+        ],
+        '10-05-2022' => [
+            [
+                'title' => 'Data Science Insights',
+                'author' => 'Bob Williams',
+                'text' => 'Analyzing trends and insights in the field of data science.'
+            ],
+            [
+                'title' => 'Machine Learning for Beginners',
+                'author' => 'Emily Davis',
+                'text' => 'An introduction to machine learning concepts.'
+            ],
+            [
+                'title' => 'Designing User-Friendly Interfaces',
+                'author' => 'Alex Turner',
+                'text' => 'Tips for creating user-friendly and intuitive interfaces.'
+            ]
+        ],
+    ];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +55,18 @@
 
 <body>
 
+    <?php
+        foreach ($posts as $date => $postList) {
+            echo "Date: ".$date."<br>";
 
+            foreach ($postList as $post) {
+                echo "- Title: ".$post['title']."<br>";
+                echo "- Author: ".$post['author']."<br>";
+                echo "- Text: ".$post['text']."<br>";
+                echo "<br>";
+            }
+        }
+    ?>
 
 </body>
 
